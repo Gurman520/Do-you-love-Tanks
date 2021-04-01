@@ -12,8 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.OpenScene;
 
-public class SignUpController {
+public class SignUpController extends OpenScene {
+
+    protected String Em;
 
     @FXML
     private ResourceBundle resources;
@@ -35,20 +38,12 @@ public class SignUpController {
 
     @FXML
     void ClickReg(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/sample/MainMenu/MainMenu.fxml"));
-        try {
-            loader.load();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
         Register.getScene().getWindow().hide();
-        stage.showAndWait();
+
+        Em = RegEmail.getText();
+        OpenNewScene("/sample/SignIn/SignIn.fxml");
 
     }
+
 
 }

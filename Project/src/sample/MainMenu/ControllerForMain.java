@@ -9,8 +9,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import sample.OpenScene;
 
-public class ControllerForMain {
+public class ControllerForMain extends OpenScene {
 
     @FXML
     private ResourceBundle resources;
@@ -31,27 +32,12 @@ public class ControllerForMain {
 
     @FXML
     void ClickMult(ActionEvent event) {
-
+        
         OpenNewScene("/sample/Game/Game.fxml");
     }
 
-    private void OpenNewScene(String window){
 
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(window));
-        try {
-            loader.load();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-    }
 
 }
 

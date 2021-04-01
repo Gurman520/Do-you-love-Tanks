@@ -1,8 +1,7 @@
-package sample.StartPage;
+package sample.SignIn;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,8 +12,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.OpenScene;
+import sample.SignUp.SignUpController;
 
-public class Controller extends OpenScene {
+public class SignInController extends OpenScene {
 
     @FXML
     private ResourceBundle resources;
@@ -23,29 +23,22 @@ public class Controller extends OpenScene {
     private URL location;
 
     @FXML
-    private Button RegBtn;
+    private Button Enter;
 
     @FXML
-    private Button EnterBtn;
-
-    @FXML
-    private TextField Email;
+    private TextField mail;
 
     @FXML
     private PasswordField Password;
 
     @FXML
-    public void ClickEnter(ActionEvent actionEvent) {
-        EnterBtn.getScene().getWindow().hide();
+    void ClickEn(ActionEvent event) {
+        //Enter.getScene().getWindow().hide();
+        Enter.getScene().getWindow().hide();
         OpenNewScene("/sample/MainMenu/MainMenu.fxml");
-    }
 
-    @FXML
-    public void ClickReg(ActionEvent actionEvent) {
-        RegBtn.getScene().getWindow().hide();
-        OpenNewScene("/sample/SignUp/SignUp.fxml");
-    }
 
+    }
 
 
 }
